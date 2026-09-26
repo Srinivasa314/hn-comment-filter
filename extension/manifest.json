@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "HN Comment Filter",
+  "version": "0.1.0",
+  "description": "Keeps the Hacker News comments worth reading, scored by TypeSafe Jev against criteria you choose.",
+  "permissions": ["storage", "unlimitedStorage"],
+  "host_permissions": ["https://news.ycombinator.com/*", "https://api.typesafe.ai/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://news.ycombinator.com/item*"],
+      "js": ["shared.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "HN Comment Filter settings"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}

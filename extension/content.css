@@ -1,0 +1,87 @@
+/* Matches HN's own look: Verdana, #828282 metadata grey. */
+
+.hncf-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin: 4px 0 12px;
+  font: 9pt Verdana, Geneva, sans-serif;
+  color: #828282;
+}
+.hncf-bar label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.hncf-bar select {
+  font: inherit;
+}
+.hncf-status-error {
+  color: #b33;
+}
+.hncf-bar .hncf-settings {
+  color: #828282;
+  text-decoration: underline;
+}
+
+.hncf-badge {
+  margin-left: 6px;
+  padding: 0 4px;
+  border: 1px solid #d0d0c8;
+  border-radius: 3px;
+  color: #828282;
+  font: 8pt Verdana, Geneva, sans-serif;
+  line-height: 1.4;
+}
+.hncf-badge.hncf-filtered {
+  border-style: dashed;
+}
+.hncf-badge.hncf-error {
+  color: #b33;
+  border-color: #e0a0a0;
+}
+
+/* Filtered comment kept as context for a reply below: about two lines, faded, with "show more". */
+tr.hncf-shortened .commtext {
+  max-height: 2.6em;
+  overflow: hidden;
+  opacity: 0.55;
+  -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent);
+  mask-image: linear-gradient(to bottom, #000 50%, transparent);
+}
+tr.hncf-shortened .reply {
+  display: none;
+}
+.hncf-more {
+  display: none;
+  margin-top: 2px;
+  font-size: 8pt;
+  color: #828282;
+}
+tr.hncf-context .hncf-more {
+  display: inline-block;
+}
+
+/* Filtered branches: hidden behind a "N filtered comments" line; faded once opened. */
+tr.hncf-folded {
+  display: none;
+}
+tr.hncf-unfolded .comment {
+  opacity: 0.6;
+}
+tr.hncf-fold td {
+  padding-top: 2px;
+  padding-bottom: 12px;
+}
+.hncf-fold-button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.hncf-fold-button:hover {
+  color: #000;
+}
